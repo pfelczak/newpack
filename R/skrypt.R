@@ -1,4 +1,7 @@
+install.packages("tidyverse")
+
 library(devtools)
+library(tidyverse)
 
 use_git()
 
