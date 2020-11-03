@@ -6,7 +6,7 @@ fun_pack <- function(a = 10, b = 20, d = 2){
     as.data.frame()
 
   out <- out %>%
-    summarise(mean(.,na.rm = T))
+    summarise(mean = mean(.,na.rm = T))
 
   return(out)
 }
