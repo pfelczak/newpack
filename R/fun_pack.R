@@ -1,9 +1,9 @@
 fun_pack <- function(dane = input,
                      kategoria = "Passenger Cars",
-                     #paliwo = "Petrol",
-                     #segment = "Mini",
+                     paliwo = "Petrol",
+                     segment = "Mini",
                      euro = "Euro 5",
-                     #technologia = "GDI",
+                     technologia = "GDI",
                      mode = "",
                      substancja = c("EC", "CO")) {
 
