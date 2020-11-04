@@ -12,7 +12,7 @@ fun_pack <- function(dane = input,
   out <- wskazniki %>%
     filter(Category %in% kategoria) %>%
     filter(Fuel %in% paliwo) %>%
-    filter(EuroStandard %in% euro) %>%
+    filter(Euro.Standard %in% euro) %>%
     filter(Technology %in% technologia) %>%
     filter(Pollutant %in% substancja) %>%
     filter(Mode %in% mode)
