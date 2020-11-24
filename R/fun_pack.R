@@ -26,9 +26,9 @@ fun_pack <- function(dane = input,
     filter(Category %in% kategoria) %>%
     filter(Fuel %in% paliwo) %>%
     filter(Euro.Standard %in% euro) %>%
-    #filter(Technology %in% technologia) %>%
     filter(Pollutant %in% substancja) %>%
     filter(Mode %in% mode)
+  #filter(Technology %in% technologia)
 
   out <- inner_join(x = out, y = input, by = "Segment")
 
