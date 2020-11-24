@@ -14,9 +14,9 @@
 fun_pack <- function(dane = input,
                      kategoria = "Passenger Cars",
                      paliwo = "Petrol",
-                     segment = "Mini",
+                     #segment = "Mini",
                      euro = "Euro 5",
-                     technologia = "GDI",
+                     #technologia = "GDI",
                      mode = "",
                      substancja = c("EC", "CO")) {
 
@@ -26,7 +26,7 @@ fun_pack <- function(dane = input,
     filter(Category %in% kategoria) %>%
     filter(Fuel %in% paliwo) %>%
     filter(Euro.Standard %in% euro) %>%
-    filter(Technology %in% technologia) %>%
+    #filter(Technology %in% technologia) %>%
     filter(Pollutant %in% substancja) %>%
     filter(Mode %in% mode)
 
