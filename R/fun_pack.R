@@ -38,6 +38,8 @@ fun_pack <- function(dane = input,
     ) %>%
     select(Category, Fuel, Euro.Standard, Technology, Pollutant, Mode, Segment, Nat, Emisja)
 
+  out <<- out
   return(out)
+
 
 }
