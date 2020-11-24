@@ -46,6 +46,9 @@ input <- data.frame(Nat = rnorm(50, mean = 100, sd = 50),
                                      size = 50, replace = T) %>% as.character())
 input$Segment <- as.character(input$Segment)
 
+save(input,file="Data/input.rda")
+save(wskazniki,file="Data/wskazniki.rda")
+
 # Zdanie domowe. Nasz input ma zawierać również infomracje o rodzaju paliwa (Fuel),
 # technologi oczyszczania spalin (Technology).
 
