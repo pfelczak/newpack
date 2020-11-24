@@ -60,7 +60,7 @@ library(tidyverse)
 load_all() # laduje funcjie
 
 fun_pack()
-pfwykres(out,out$technology, out$Emisja)
+pfwykres(out,out$Technology, out$Emisja)
 
 colnames(wskazniki)
 

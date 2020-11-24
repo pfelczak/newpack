@@ -13,7 +13,7 @@
 #' @examples
 fun_pack <- function(dane = input,
                      kategoria = "Passenger Cars",
-                     paliwo = "Petrol",
+                     #paliwo = "Petrol",
                      #segment = "Mini",
                      euro = "Euro 5",
                      #technologia = "GDI",
@@ -24,7 +24,7 @@ fun_pack <- function(dane = input,
 
   out <- wskazniki %>%
     filter(Category %in% kategoria) %>%
-    filter(Fuel %in% paliwo) %>%
+    #filter(Fuel %in% paliwo)
     filter(Euro.Standard %in% euro) %>%
     filter(Pollutant %in% substancja) %>%
     filter(Mode %in% mode)
