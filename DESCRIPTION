@@ -1,16 +1,27 @@
 Package: newpack
-Title: What the Package Does (One Line, Title Case)
+Title: Analiza i wizualizacja danych dotyczaca ruchu drogowego
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Piotr",
+           family = "Felczak",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
+           email = "piotrfelczak8@gmail.com@example.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: Pakiet liczy emisje spalin ze wzgledu na rodzaj silnikow euro, standard, paliwo, kategorie,  substancja i technologie.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to
     pick a license
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Suggests:
+  testthat,
+  knitr,
+  rmarkdown
+Depends:
+  tidyverse,
+  dplyr,
+  base,
+  stats,
+  ggplot2,
+VignetteBuilder: knitr

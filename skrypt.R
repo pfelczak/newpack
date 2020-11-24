@@ -54,6 +54,9 @@ save(wskazniki,file="Data/wskazniki.rda")
 
 # 3. Funkcja --------------------------------------------------------------
 
+library(devtools) #pakiet potrzebny do oslugi gita
+library(tidyverse)
+
 load_all() # laduje funcjie
 
 fun_pack()

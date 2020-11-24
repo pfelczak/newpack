@@ -1,3 +1,16 @@
+#' Test
+#'
+#' @param dane dataframe
+#' @param kategoria character
+#' @param euro character
+#' @param mode character
+#' @param substancja character
+#'
+#' @return
+#' @import dplyr tidyverse ggplot2
+#' @export
+#'
+#' @examples
 fun_pack <- function(dane = input,
                      kategoria = "Passenger Cars",
                      paliwo = "Petrol",
