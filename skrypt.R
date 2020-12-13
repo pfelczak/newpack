@@ -35,9 +35,6 @@ wskazniki <- wskazniki %>%
 
 colnames(wskazniki)[15:17] <- c("Reduction", "Bio", "Procent")
 
-unique(wskazniki$Fuel)
-unique(wskazniki$Technology)
-unique(wskazniki$Segment)
 
 # 2. Przygotowanie danych wejściowych -------------------------------------
 
@@ -50,8 +47,6 @@ input$Segment <- as.character(input$Segment)
 save(input,file="Data/input.rda")
 save(wskazniki,file="Data/wskazniki.rda")
 
-# Zdanie domowe. Nasz input ma zawierać również infomracje o rodzaju paliwa (Fuel),
-# technologi oczyszczania spalin (Technology).
 
 # 3. Funkcja --------------------------------------------------------------
 
