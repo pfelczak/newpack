@@ -82,5 +82,6 @@ view(wskazniki)
 view(input)
 
 ?input #opisać
+?fun_pack()
 
 
