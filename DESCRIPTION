@@ -5,11 +5,10 @@ Authors@R:
     person(given = "Piotr",
            family = "Felczak",
            role = c("aut", "cre"),
-           email = "piotrfelczak8@gmail.com@example.com",
+           email = "piotrfelczak8@gmail.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: Pakiet liczy emisje spalin ze wzgledu na rodzaj silnikow euro, standard, paliwo, kategorie,  substancja i technologie.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

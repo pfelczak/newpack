@@ -1,3 +1,5 @@
+# Pakiety startowe
+
 library(openxlsx)
 library(devtools) #pakiet potrzebny do oslugi gita
 library(tidyverse)
@@ -12,10 +14,16 @@ fun_pack()
 
 exists("funpack", where = globalenv(), inherits = FALSE) #sprawdzenie czy funkcja istnieje lokalnie
 
+
+# Tworzenie dokumentacji
+
+library(roxygen2) #code -> insert Roxygen Selection
+document()
+
+use_mit_license("Piotr Felczak")
+
 check() # sprawdzanie czy funkcja jest dobrze napisana
 
-#tworzymy dokumentacje
-library(roxygen2) #code -> insert Roxygen Selection
 
 # 1. Wczytanie wskazników  ------------------------------------------------
 

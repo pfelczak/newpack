@@ -8,11 +8,14 @@
 #' @param zanieczyszczenie character
 #' @param mod character
 #'
-#' @return
-#' @import dplyr tidyverse ggplot2
-#' @export
+#' @return dataframe
 #'
+#' @import dplyr tidyverse ggplot2
 #' @examples
+#' fun_pack(input, "Passenger Cars", NULL, "Euro 5", NULL, c("EC", "CO"),"")
+#'
+#' @export
+
 fun_pack <- function(dane = input,
                      kategoria = NULL,
                      paliwo = NULL,

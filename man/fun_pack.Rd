@@ -2,17 +2,16 @@
 % Please edit documentation in R/fun_pack.R
 \name{fun_pack}
 \alias{fun_pack}
-\title{Test}
+\title{Fukcja obliczania emisji spalania}
 \usage{
 fun_pack(
   dane = input,
-  kategoria = "Passenger Cars",
-  paliwo = "Petrol",
-  segment = "Mini",
-  euro = "Euro 5",
-  technologia = "GDI",
-  mode = "",
-  substancja = c("EC", "CO")
+  kategoria = NULL,
+  paliwo = NULL,
+  euro = NULL,
+  technologia = NULL,
+  zanieczyszczenie = NULL,
+  mod = ""
 )
 }
 \arguments{
@@ -20,15 +19,22 @@ fun_pack(
 
 \item{kategoria}{character}
 
+\item{paliwo}{= character}
+
 \item{euro}{character}
 
-\item{mode}{character}
+\item{technologia}{character}
 
-\item{substancja}{character}
+\item{zanieczyszczenie}{character}
+
+\item{mod}{character}
 }
 \value{
-
+dataframe
 }
 \description{
-Test
+Fukcja obliczania emisji spalania
+}
+\examples{
+fun_pack(input, "Passenger Cars", NULL, "Euro 5", NULL, c("EC", "CO"),"")
 }

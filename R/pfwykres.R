@@ -1,6 +1,18 @@
-library(openxlsx)
-library(tidyverse)
-
+#' Funkcja rysuje wykres na podstawie obliczonych emisji z funkcji fun_pack()
+#'
+#' @param path dataframe
+#' @param kat character
+#' @param default character
+#' @param x character
+#' @param y character
+#'
+#' @return dataframe
+#'
+#' @import dplyr tidyverse ggplot2
+#' @examples
+#' pfwykres(path = out, kat = Category, x = Technology, y = Emisja)
+#'
+#' @export
 
 pfwykres <- function(path = out,
                 kat = Category,
