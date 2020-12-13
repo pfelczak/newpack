@@ -12,23 +12,75 @@
 #'
 #' @examples
 fun_pack <- function(dane = input,
-                     kategoria = "Passenger Cars",
-                     #paliwo = "Petrol",
-                     #segment = "Mini",
-                     euro = "Euro 5",
-                     #technologia = "GDI",
-                     mode = "",
-                     substancja = c("EC", "CO")) {
+                     kategoria = NULL,
+                     paliwo = NULL,
+                     euro = NULL,
+                     technologia = NULL,
+                     zanieczyszczenie = NULL,
+                     mod = "")
+                      {
 
-  # Zabezpieczenia argumentów funkcji i danych wejscioweych.
+  out <- wskazniki
 
-  out <- wskazniki %>%
-    filter(Category %in% kategoria) %>%
-    #filter(Fuel %in% paliwo)
-    filter(Euro.Standard %in% euro) %>%
-    filter(Pollutant %in% substancja) %>%
-    filter(Mode %in% mode)
-  #filter(Technology %in% technologia)
+  if(!is.null(kategoria))
+  {
+    out <- out  %>% filter(Category %in% kategoria)
+  }
+  else
+  {
+    uniq <- unique(out$Category)
+    out <- out  %>% filter(Category %in% uniq)
+  }
+
+  #Filter Fuel
+
+  if(!is.null(paliwo))
+  {
+    out <- out %>% filter(Fuel %in% paliwo)
+  }
+  else
+  {
+    uniq <- unique(out$Fuel)
+    out <- out %>% filter(Fuel %in% uniq)
+  }
+
+  #Filter Euro.Standard
+
+  if(!is.null(euro))
+  {
+    out <- out %>% filter(Euro.Standard %in% euro)
+  }
+  else
+  {
+    uniq <- unique(out$Euro.Standard)
+    out <- out %>% filter(Euro.Standard %in% uniq)
+  }
+
+  #Filter Technology
+
+  if(!is.null(technologia))
+  {
+    out <- out %>% filter(Technology %in% technologia)
+  }
+  else
+  {
+    uniq <- unique(out$Technology)
+    out <- out %>% filter(Technology %in% uniq)
+  }
+
+  #Filter Technology
+
+  if(!is.null(zanieczyszczenie))
+  {
+    out <- out %>% filter(Pollutant %in% zanieczyszczenie)
+  }
+  else
+  {
+    uniq <- unique(out$Pollutant)
+    out <- out %>% filter(Pollutant %in% uniq)
+  }
+
+  #inner join
 
   out <- inner_join(x = out, y = input, by = "Segment")
 

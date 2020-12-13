@@ -37,6 +37,7 @@ colnames(wskazniki)[15:17] <- c("Reduction", "Bio", "Procent")
 
 unique(wskazniki$Fuel)
 unique(wskazniki$Technology)
+unique(wskazniki$Segment)
 
 # 2. Przygotowanie danych wejściowych -------------------------------------
 
@@ -59,10 +60,15 @@ library(tidyverse)
 
 load_all() # laduje funcjie
 
-fun_pack()
-pfwykres(out,out$Technology, out$Emisja)
+fun_pack(input, "Passenger Cars", NULL, "Euro 5", NULL, c("EC", "CO"),"")
 
-colnames(wskazniki)
+
+# wywoanie 2
+
+pfwykres(path = out,
+         kat = Category,
+         x = Technology,
+         y = Emisja)
 
 
 
