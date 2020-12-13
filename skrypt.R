@@ -65,5 +65,6 @@ pfwykres(path = out,
          x = Technology,
          y = Emisja)
 
+view(wskazniki)
 
 

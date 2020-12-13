@@ -1,10 +1,12 @@
-#' Test
+#' Fukcja obliczania emisji spalania
 #'
 #' @param dane dataframe
 #' @param kategoria character
+#' @param paliwo = character
 #' @param euro character
-#' @param mode character
-#' @param substancja character
+#' @param technologia character
+#' @param zanieczyszczenie character
+#' @param mod character
 #'
 #' @return
 #' @import dplyr tidyverse ggplot2
