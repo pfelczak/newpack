@@ -2,39 +2,42 @@
 % Please edit documentation in R/fun_pack.R
 \name{fun_pack}
 \alias{fun_pack}
-\title{Fukcja obliczania emisji spalania}
+\title{Fukcja do obliczania emisji spalania}
 \usage{
 fun_pack(
   dane = input,
   kategoria = NULL,
-  paliwo = NULL,
   euro = NULL,
-  technologia = NULL,
   zanieczyszczenie = NULL,
   mod = ""
 )
 }
 \arguments{
-\item{dane}{dataframe}
+\item{dane}{dataframe - dane wejscowe}
 
-\item{kategoria}{character}
+\item{kategoria}{character - kategoria pojazdu}
 
-\item{paliwo}{= character}
+\item{euro}{character - dopuszczalna norma emnisji spalin np Euro 5}
 
-\item{euro}{character}
+\item{zanieczyszczenie}{character - rodzaj emitowanego zanieczyszczenia}
 
-\item{technologia}{character}
-
-\item{zanieczyszczenie}{character}
-
-\item{mod}{character}
+\item{mod}{character - tryb jazdy danego pojazdu}
 }
 \value{
 dataframe
 }
 \description{
-Fukcja obliczania emisji spalania
+Funkcja oblicza emisje spalania na podstawie danych ze zmiennej
+\code{wskazniki}, oraz ze zmiennej \code{input}. Wynikiem jest ramka danych
+zapisana w zmiennej \code{out}. Dane mozna dowolnie filtrowac ze wzgleu na
+kategorie, euro standard, oraz zanieczyszczenie.
+}
+\details{
+Funkcja korzysta z algorytmu do liczenia emisji:
+Emisja = Nat x ((Alpha  x Procent^2 + Beta x Procent + Gamma +
+(Delta/Procent)) / (Epsilon x Procent^2 + Zita x Procent + Hta) x (1- Reduction))
 }
 \examples{
-fun_pack(input, "Passenger Cars", NULL, "Euro 5", NULL, c("EC", "CO"),"")
+fun_pack(input, "Passenger Cars", "Euro 5", c("EC", "CO"),"")
+
 }

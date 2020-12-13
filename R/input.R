@@ -1,7 +1,7 @@
 #' Dane wejsciowe dla funkcji \code{fun_pack()}
 #'
 #'
-#' @format Ramka danych zawiera:
+#' @format Zawartosc danych:
 #' \describe{
 #'  \item{Nat}{Natezenie ruchu}
 #'  \item{Segment}{Segment pojazdow}

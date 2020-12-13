@@ -68,20 +68,28 @@ library(tidyverse)
 
 load_all() # laduje funcjie
 
+#przykladowe wywolanie funkcji fun_pack()
+
 fun_pack(input, "Passenger Cars", "Euro 5", c("EC", "CO"),"")
 
 
-# wywoanie 2
+#przykladowe wywolanie funkcji pfwykres()
 
 pfwykres(path = out,
          kat = Category,
          x = Technology,
          y = Emisja)
 
+#ramki danych
+
 view(wskazniki)
 view(input)
 
-?input #opisać
+#dokumentacja
+
+?input
+?wskazniki
 ?fun_pack()
+?pfwykres
 
 

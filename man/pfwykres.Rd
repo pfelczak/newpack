@@ -2,7 +2,7 @@
 % Please edit documentation in R/pfwykres.R
 \name{pfwykres}
 \alias{pfwykres}
-\title{Funkcja rysuje wykres na podstawie obliczonych emisji z funkcji fun_pack()}
+\title{Funkcja rysujaca wykres na podstawie obliczonych emisji spalin}
 \usage{
 pfwykres(
   path = out,
@@ -13,23 +13,27 @@ pfwykres(
 )
 }
 \arguments{
-\item{path}{dataframe}
+\item{path}{dataframe - ramka danych obliczonych emisji z funkcji \code{fun_pack()}}
 
-\item{kat}{character}
+\item{kat}{character - kategoria pojazdu}
 
-\item{default}{character}
+\item{default}{character - domyslna wartosc kategori pojazdu}
 
-\item{x}{character}
+\item{x}{character - zmiennna numeryczna (os x)}
 
-\item{y}{character}
+\item{y}{character - zmianna kategoryczna (os y)}
 }
 \value{
-dataframe
+double
 }
 \description{
-Funkcja rysuje wykres na podstawie obliczonych emisji z funkcji fun_pack()
+Funkcja rysuje wykres na podstawie obliczonych emisji z funkcji \code{fun_pack()}
 }
 \examples{
-pfwykres(path = out, kat = Category, x = Technology, y = Emisja)
+# Wykres emisji spalin ze wzgledu na technologie pojazdow
+pfwykres(path = out,
+        kat = Category,
+        x = Technology,
+        y = Emisja)
 
 }
