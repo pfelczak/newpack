@@ -19,6 +19,7 @@ exists("funpack", where = globalenv(), inherits = FALSE) #sprawdzenie czy funkcj
 
 library(roxygen2) #code -> insert Roxygen Selection
 document()
+usethis::use_vignette("my-vignette")
 
 use_mit_license("Piotr Felczak")
 

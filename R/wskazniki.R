@@ -6,7 +6,7 @@
 #' \describe{
 #'  \item{Category}{Kategoria pojazdu - character}
 #'  \item{Fuel}{Rodzaj paliwa - character}
-#'  \item{Segment}{Segment pojazdow - character}
+#'  \item{Segment}{Rodzaj podwozia - character}
 #'  \item{Euro.Standard}{Dopuszczalnych norma emisji spalin - character}
 #'  \item{Technology}{Technologia pracy silnika - character}
 #'  \item{Pollutant}{Rodzaj zanieczyszczenia - character}

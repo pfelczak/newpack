@@ -8,7 +8,7 @@
 Zawartosc danych:
 \describe{
 \item{Nat}{Natezenie ruchu}
-\item{Segment}{Segment pojazdow}
+\item{Segment}{Rodzaj nadwozia}
 \item{Fuel}{Rodzaj paliwa}
 \item{Technology}{Zastosowana technologia pracy silnika}
 }
