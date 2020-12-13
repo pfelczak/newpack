@@ -1,16 +1,22 @@
-#' Funkcja rysuje wykres na podstawie obliczonych emisji z funkcji fun_pack()
+#' Funkcja rysujaca wykres na podstawie obliczonych emisji spalin
 #'
-#' @param path dataframe
-#' @param kat character
-#' @param default character
-#' @param x character
-#' @param y character
+#' Funkcja rysuje wykres na podstawie obliczonych emisji z funkcji \code{fun_pack()}
 #'
-#' @return dataframe
+#' @param path dataframe - ramka danych obliczonych emisji z funkcji \code{fun_pack()}
+#' @param kat character - kategoria pojazdu
+#' @param default character - domyslna wartosc kategori pojazdu
+#' @param x character - zmiennna numeryczna (os x)
+#' @param y character - zmianna kategoryczna (os y)
+#'
+#' @return double
 #'
 #' @import dplyr tidyverse ggplot2
 #' @examples
-#' pfwykres(path = out, kat = Category, x = Technology, y = Emisja)
+#' # Wykres emisji spalin ze wzgledu na technologie pojazdow
+#' pfwykres(path = out,
+#'         kat = Category,
+#'         x = Technology,
+#'         y = Emisja)
 #'
 #' @export
 

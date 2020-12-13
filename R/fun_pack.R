@@ -1,26 +1,31 @@
-#' Fukcja obliczania emisji spalania
+#' Fukcja do obliczania emisji spalania
 #'
-#' @param dane dataframe
-#' @param kategoria character
-#' @param paliwo = character
-#' @param euro character
-#' @param technologia character
-#' @param zanieczyszczenie character
-#' @param mod character
+#'Funkcja oblicza emisje spalania na podstawie danych ze zmiennej
+#' \code{wskazniki}, oraz ze zmiennej \code{input}. Wynikiem jest ramka danych
+#' zapisana w zmiennej \code{out}. Dane mozna dowolnie filtrowac ze wzgleu na
+#' kategorie, euro standard, oraz zanieczyszczenie.
+#'
+#' @details Funkcja korzysta z algorytmu do liczenia emisji:
+#' Emisja = Nat x ((Alpha  x Procent^2 + Beta x Procent + Gamma +
+#' (Delta/Procent)) / (Epsilon x Procent^2 + Zita x Procent + Hta) x (1- Reduction))
+#'
+#' @param dane dataframe - dane wejscowe
+#' @param kategoria character - kategoria pojazdu
+#' @param euro character - dopuszczalna norma emnisji spalin np Euro 5
+#' @param zanieczyszczenie character - rodzaj emitowanego zanieczyszczenia
+#' @param mod character - tryb jazdy danego pojazdu
 #'
 #' @return dataframe
 #'
 #' @import dplyr tidyverse ggplot2
 #' @examples
-#' fun_pack(input, "Passenger Cars", NULL, "Euro 5", NULL, c("EC", "CO"),"")
+#' fun_pack(input, "Passenger Cars", "Euro 5", c("EC", "CO"),"")
 #'
 #' @export
 
 fun_pack <- function(dane = input,
                      kategoria = NULL,
-                     paliwo = NULL,
                      euro = NULL,
-                     technologia = NULL,
                      zanieczyszczenie = NULL,
                      mod = "")
                       {
@@ -37,17 +42,6 @@ fun_pack <- function(dane = input,
     out <- out  %>% filter(Category %in% uniq)
   }
 
-  #Filter Fuel
-
-  if(!is.null(paliwo))
-  {
-    out <- out %>% filter(Fuel %in% paliwo)
-  }
-  else
-  {
-    uniq <- unique(out$Fuel)
-    out <- out %>% filter(Fuel %in% uniq)
-  }
 
   #Filter Euro.Standard
 
@@ -61,19 +55,8 @@ fun_pack <- function(dane = input,
     out <- out %>% filter(Euro.Standard %in% uniq)
   }
 
-  #Filter Technology
 
-  if(!is.null(technologia))
-  {
-    out <- out %>% filter(Technology %in% technologia)
-  }
-  else
-  {
-    uniq <- unique(out$Technology)
-    out <- out %>% filter(Technology %in% uniq)
-  }
-
-  #Filter Technology
+  #Filter Pollutant
 
   if(!is.null(zanieczyszczenie))
   {
@@ -87,7 +70,7 @@ fun_pack <- function(dane = input,
 
   #inner join
 
-  out <- inner_join(x = out, y = input, by = "Segment")
+  out <- inner_join(x = out, y = input, by = c("Segment","Fuel","Technology"))
 
   out <- out %>%
     mutate(Emisja = Nat * ((Alpha * Procent ^ 2 + Beta * Procent + Gamma + (Delta/Procent))/

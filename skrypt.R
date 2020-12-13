@@ -46,11 +46,16 @@ colnames(wskazniki)[15:17] <- c("Reduction", "Bio", "Procent")
 
 # 2. Przygotowanie danych wejściowych -------------------------------------
 
+segm = c("Mini","Small","Medium","Large-SUV-Executive")
+n_spl = 50
 
-input <- data.frame(Nat = rnorm(50, mean = 100, sd = 50),
-                    Segment = sample(c("Mini", "Small", "Medium", "Large-SUV-Executive"),
-                                     size = 50, replace = T) %>% as.character())
-input$Segment <- as.character(input$Segment)
+input <- data.frame(Nat = abs(rnorm(n_spl, mean = n_spl*2, sd = n_spl)),
+                    Segment = sample(segm,
+                                  size = n_spl,replace = T) %>% as.character(),
+                    Fuel = sample(unique(wskazniki$Fuel),
+                                  size = n_spl, replace = T) %>% as.character(),
+                    Technology = sample(unique(wskazniki$Technology),
+                                  size = n_spl, replace = T) %>% as.character())
 
 save(input,file="Data/input.rda")
 save(wskazniki,file="Data/wskazniki.rda")
@@ -63,7 +68,7 @@ library(tidyverse)
 
 load_all() # laduje funcjie
 
-fun_pack(input, "Passenger Cars", NULL, "Euro 5", NULL, c("EC", "CO"),"")
+fun_pack(input, "Passenger Cars", "Euro 5", c("EC", "CO"),"")
 
 
 # wywoanie 2
@@ -74,5 +79,8 @@ pfwykres(path = out,
          y = Emisja)
 
 view(wskazniki)
+view(input)
+
+?input #opisać
 
 
